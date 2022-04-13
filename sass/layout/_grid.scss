@@ -1,0 +1,42 @@
+.grid {
+  display: grid;
+  column-gap: $column-gap;
+  row-gap: $row-gap;
+
+  @include respond(tab-port) {
+    row-gap: $row-gap-small;
+  }
+
+  &-col--2 {
+    @include grid-col(2);
+
+    @include respond(tab-port) {
+      @include grid-col(1)
+    }
+  }
+
+  &-col--3 {
+    @include grid-col(3);
+
+    @include respond(tab-port) {
+      @include grid-col(1)
+    }
+  }
+
+  &-col--4 {
+    @include grid-col(4);
+
+    @include respond(tab-port) {
+      @include grid-col(1)
+    }
+  }
+
+  &-col-popup {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
